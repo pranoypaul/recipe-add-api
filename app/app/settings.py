@@ -35,7 +35,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework.authtoken',
     'core',
+    'user',
+    'app',
 ]
 
 MIDDLEWARE = [
@@ -77,7 +81,7 @@ DATABASES = {
         'HOST': os.environ.get('DB_HOST'),
         'NAME': os.environ.get('DB_NAME'),
         'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASS'),#all these values are set in the docker-compose.yml file
+        'PASSWORD': os.environ.get('DB_PASS'),  # all these values are set in the docker-compose.yml file
     }
 }
 
@@ -97,6 +101,10 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
+]
+# Authentication backends
+AUTHENTICATION_BACKENDS = [
+'django.contrib.auth.backends.ModelBackend',
 ]
 
 # Internationalization

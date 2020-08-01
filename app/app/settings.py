@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'core',
     'user',
     'app',
+    'recipe'
 ]
 
 MIDDLEWARE = [
@@ -101,10 +102,6 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
-]
-# Authentication backends
-AUTHENTICATION_BACKENDS = [
-'django.contrib.auth.backends.ModelBackend',
 ]
 
 # Internationalization
